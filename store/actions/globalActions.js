@@ -1,4 +1,4 @@
-export const globalAcrions = {
+export const globalActions = {
     setApartments: (state, action) => {
         state.apartments = action.payload
     },

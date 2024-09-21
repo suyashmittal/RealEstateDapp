@@ -8,6 +8,12 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "lint-stages": {
+    "./src/**/*.{ts,js,jsx,tsx}": [
+      "yarn lint --fix",
+      "yarn format"
+    ]
+  },
   "dependencies": {
     "@headlessui/react": "^1.7.17",
     "@rainbow-me/rainbowkit": "^1.0.10",
@@ -20,6 +26,8 @@
     "eslint": "8.48.0",
     "eslint-config-next": "13.4.19",
     "ethers": "^6.7.1",
+    "husky": "9.1.6",
+    "lint-staged": "15.2.10",
     "lokijs": "^1.5.12",
     "moment": "^2.29.4",
     "next": "13.4.19",

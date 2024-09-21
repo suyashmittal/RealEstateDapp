@@ -1,4 +1,4 @@
-export const globalSates = {
+export const globalStates = {
     apartments: [],
     apartment: null,
     reviews: [],
