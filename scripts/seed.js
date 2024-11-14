@@ -80,7 +80,7 @@ const generateFakeApartment = (count) => {
 }
 
 async function createApartments(contract, apartment) {
-    const tx = await contract.createAppartment(
+    const tx = await contract.createApt(
         apartment.name,
         apartment.description,
         apartment.location,
@@ -92,7 +92,7 @@ async function createApartments(contract, apartment) {
 }
 
 async function bookApartments(contract, aid, dates) {
-    const tx = await contract.bookApartment(aid, dates, { value: toWei(maxPrice * dates.length) })
+    const tx = await contract.bookApt(aid, dates, { value: toWei(maxPrice * dates.length) })
     await tx.wait()
 }
 
@@ -105,7 +105,7 @@ async function main() {
         const contractAddresses = fs.readFileSync('./contracts/contractAddress.json', 'utf8')
         const { dappBnbContract: dappBnbAddress } = JSON.parse(contractAddresses)
 
-        dappBnbContract = await ethers.getContractAt('DappBnb', dappBnbAddress)
+        dappBnbContract = await ethers.getContractAt('RealEstateDapp', dappBnbAddress)
         const dates1 = [1678492800000, 1678579200000, 1678665600000]
 
         // Process #1

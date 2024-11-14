@@ -7,7 +7,7 @@ async function deployContract() {
     const securityFeePercent = 5
 
     try {
-        contract = await ethers.deployContract('DappBnb', [taxPercent, securityFeePercent])
+        contract = await ethers.deployContract('RealEstateDapp', [taxPercent, securityFeePercent])
         await contract.waitForDeployment()
 
         console.log('Contracts deployed successfully.')
